@@ -34,20 +34,28 @@ def roll_dice():
     num=random.randint(1,6)
     return num
 
+game = 1
+while game == 1:
 #starting game and updating bets
-print("Starting the game....\n You and computer both have 100$ in hand.")
-bet_u,bet_c = bet()
+    print("Starting the game....\n You and computer both have 100$ in hand.")
+    bet_u,bet_c = bet()
 
-#rolling dice
-print("....\n Call your dice..  (any number betweeen 1 and 6) ")
-choice = int(input())
-print("\nRolling....")
-rolled = roll_dice()
-print("You rolled .......:   " + str(rolled))
+    #rolling dice
+    print("....\n Call your dice..  (any number betweeen 1 and 6) ")
+    choice = int(input())
+    print("\nRolling....")
+    rolled = roll_dice()
+    print("You rolled .......:   " + str(rolled))
 
-#determining winner
-winner_decider(choice,rolled,bet_u,bet_c)
+    #determining winner
+    winner_decider(choice,rolled,bet_u,bet_c)
 
-#current winnings
-print("Your money : " + str(bet_amount[0]) + "$")
-print("Computer's money : " + str(bet_amount[1]) + "$")
+    #current winnings
+    print("Your money : " + str(bet_amount[0]) + "$")
+    print("Computer's money : " + str(bet_amount[1]) + "$")
+
+    print("\n\n Press 1 to continue. Press 2 to exit")
+    game = int(input())
+    if game == 2:
+        break
+    
